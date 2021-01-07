@@ -1,4 +1,4 @@
-#zf210107.1123
+#zf210107.1146
 # Use root/example as user/password credentials
 version: '3.1'
 
@@ -21,3 +21,15 @@ services:
     restart: always
     ports:
       - 8080:8080
+
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+        MYSQL_USER: root
+        PMA_HOST: db
+
+      # - PMA_ARBITRARY=1
