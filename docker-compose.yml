@@ -1,0 +1,23 @@
+#zf210107.1123
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mariadb
+
+    volumes:
+      - $PWD/db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    restart: always
+    ports:
+      - "3306:3306"
+
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
