@@ -1,11 +1,11 @@
-#zf210107.1146
+#zf210107.1146, zf221201.0952
 # Use root/example as user/password credentials
 version: '3.1'
 
 services:
 
   db:
-    image: mariadb
+    image: mariadb/server:10.3
 
     volumes:
       - $PWD/db_data:/var/lib/mysql
